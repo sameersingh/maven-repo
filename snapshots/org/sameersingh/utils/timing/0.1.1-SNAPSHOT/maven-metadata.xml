@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.sameersingh.utils</groupId>
+  <artifactId>timing</artifactId>
+  <version>0.1.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20121106.063755</timestamp>
+      <buildNumber>3</buildNumber>
+    </snapshot>
+    <lastUpdated>20121106063755</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.1.1-20121106.063755-3</value>
+        <updated>20121106063755</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.1.1-20121106.063755-3</value>
+        <updated>20121106063755</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

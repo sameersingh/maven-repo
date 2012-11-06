@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.sameersingh.utils</groupId>
+  <artifactId>coref</artifactId>
+  <versioning>
+    <versions>
+      <version>0.1.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20121106063758</lastUpdated>
+  </versioning>
+</metadata>
