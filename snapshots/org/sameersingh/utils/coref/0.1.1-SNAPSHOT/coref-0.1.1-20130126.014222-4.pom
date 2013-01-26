@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.sameersingh.utils</groupId>
+    <artifactId>utils</artifactId>
+    <version>0.1.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>coref</artifactId>
+  <name>${project.artifactId}</name>
+  <packaging>jar</packaging>
+
+  <properties>
+    <factorie.version>1.0.0-M3</factorie.version>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>ieslnexus</id>
+      <name>IESL Nexus repostory</name>
+      <url>https://dev-iesl.cs.umass.edu/nexus/content/repositories/releases</url>
+    </repository>
+    <repository>
+      <id>ieslnexus-snapshots</id>
+      <name>IESL Nexus repostory</name>
+      <url>https://dev-iesl.cs.umass.edu/nexus/content/repositories/snapshots</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>${parent.groupId}</groupId>
+      <artifactId>timing</artifactId>
+      <version>${parent.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${parent.groupId}</groupId>
+      <artifactId>misc</artifactId>
+      <version>${parent.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>cc.factorie</groupId>
+      <artifactId>factorie</artifactId>
+      <version>${factorie.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>
