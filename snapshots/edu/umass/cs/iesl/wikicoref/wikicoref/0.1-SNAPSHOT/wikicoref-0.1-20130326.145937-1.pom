@@ -1,0 +1,237 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.umass.cs.iesl.wikicoref</groupId>
+    <artifactId>wikicoref</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <name>${project.artifactId}</name>
+    <inceptionYear>2012</inceptionYear>
+
+    <properties>
+        <maven.compiler.source>1.5</maven.compiler.source>
+        <maven.compiler.target>1.5</maven.compiler.target>
+        <encoding>UTF-8</encoding>
+        <scala.version>2.9.2</scala.version>
+    </properties>
+
+  <repositories>
+    <repository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>https://oss.sonatype.org/content/groups/scala-tools</url>
+    </repository>
+    <repository>
+      <id>ieslnexus</id>
+      <name>IESL Nexus repostory</name>
+      <url>https://dev-iesl.cs.umass.edu/nexus/content/repositories/releases</url>
+    </repository>
+    <repository>
+      <id>ieslnexus-snapshots</id>
+      <name>IESL Nexus repostory</name>
+      <url>https://dev-iesl.cs.umass.edu/nexus/content/repositories/snapshots</url>
+    </repository>
+    <repository>
+      <id>sonatype-oss-public</id>
+      <url>https://oss.sonatype.org/content/repositories</url>
+    </repository>
+    <repository>
+      <id>sameer-releases</id>
+      <name>Sameer repository</name>
+      <url>https://github.com/sameersingh/maven-repo/raw/master/releases</url>
+    </repository>
+    <repository>
+      <id>sameer-snapshots</id>
+      <name>Sameer repository</name>
+      <url>https://github.com/sameersingh/maven-repo/raw/master/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>https://oss.sonatype.org/content/groups/scala-tools</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.debasishg</groupId>
+      <artifactId>redisclient_${scala.version}</artifactId>
+      <version>2.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>${scala.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>cc.factorie</groupId>
+      <artifactId>factorie</artifactId>
+      <version>1.0.0-M3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sameersingh.paradigm</groupId>
+      <artifactId>paradigm</artifactId>
+      <version>0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.thrift</groupId>
+      <artifactId>libthrift</artifactId>
+      <version>0.8.0</version>
+    </dependency>
+    <dependency>
+      <groupId>edu.stanford.nlp</groupId>
+      <artifactId>stanford-corenlp</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.brianmartin</groupId>
+      <artifactId>thrifting-stage-1-for-wiki-link_2.9.2</artifactId>
+      <version>0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.7.1</version>
+    </dependency>
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>2.0.0</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.1</version>
+    </dependency>
+
+    <!-- Test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-tools.testing</groupId>
+      <artifactId>specs_${scala.version}</artifactId>
+      <version>1.6.9</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest_${scala.version}</artifactId>
+      <version>1.6.1</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <distributionManagement>
+    <repository>
+      <id>dev-iesl.cs.umass.edu</id>
+      <name>dev-iesl.cs.umass.edu</name>
+      <url>https://dev-iesl.cs.umass.edu/nexus/content/repositories/releases</url>
+    </repository>
+
+    <snapshotRepository>
+      <id>dev-iesl.cs.umass.edu</id>
+      <name>dev-iesl.cs.umass.edu</name>
+      <url>https://dev-iesl.cs.umass.edu/nexus/content/repositories/snapshots</url>
+      <uniqueVersion>true</uniqueVersion>
+    </snapshotRepository>
+
+    <site>
+      <id>ieslwww</id>
+      <name>IESL www repository</name>
+      <url>scp://iesl.cs.umass.edu/m/iesl/data2/www/iesl/maven/factorie</url>
+    </site>
+  </distributionManagement>
+
+  <build>
+    <sourceDirectory>src/main/scala</sourceDirectory>
+    <testSourceDirectory>src/test/scala</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>scala-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+            <configuration>
+              <args>
+                <arg>-make:transitive</arg>
+                <arg>-dependencyfile</arg>
+                <arg>${project.build.directory}/.scala_dependencies</arg>
+              </args>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <recompileMode>incremental</recompileMode>
+          <useZincServer>true</useZincServer>
+          <scalaVersion>${scala.version}</scalaVersion>
+
+          <jvmArgs>
+            <jvmArg>-Xms64m</jvmArg>
+            <jvmArg>-Xmx1800m</jvmArg>
+          </jvmArgs>
+
+          <args>
+            <arg>-target:jvm-1.5</arg>
+            <arg>-deprecation</arg>
+          </args>
+          <launchers>
+            <launcher>
+              <id>typedist</id>
+              <mainClass>edu.umass.cs.iesl.wikicoref.dataprocessor.EntityTypeDistribution</mainClass>
+              <args>
+                <arg>${basedir}</arg>
+              </args>
+              <jvmArgs>
+                <jvmArg>-Xmx50g</jvmArg>
+              </jvmArgs>
+            </launcher>
+            <launcher>
+              <id>runner</id>
+              <mainClass>edu.umass.cs.iesl.wikicoref.Runner</mainClass>
+              <args>
+                <arg>${basedir}</arg>
+              </args>
+              <jvmArgs>
+                <jvmArg>-Xmx2g</jvmArg>
+              </jvmArgs>
+            </launcher>
+          </launchers>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <useFile>false</useFile>
+          <disableXmlReport>true</disableXmlReport>
+          <!-- If you have classpath issue like NoDefClassError,... -->
+          <!-- useManifestOnlyJar>false</useManifestOnlyJar -->
+          <includes>
+            <include>**/*Test.*</include>
+            <include>**/*Suite.*</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
